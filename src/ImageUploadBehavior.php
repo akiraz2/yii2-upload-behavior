@@ -9,6 +9,7 @@ namespace yiidreamteam\upload;
 use PHPThumb\GD;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
+use yii\web\UrlNormalizer;
 
 /**
  * Class ImageUploadBehavior

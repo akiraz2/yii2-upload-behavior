@@ -12,6 +12,7 @@ use yii\base\Model;
 use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
 use yii\helpers\ArrayHelper;
+use yii\helpers\BaseInflector;
 use yii\helpers\FileHelper;
 use yii\helpers\VarDumper;
 use yii\web\UploadedFile;
@@ -165,7 +166,7 @@ class FileUploadBehavior extends \yii\base\Behavior
                     return Yii::getAlias('@web');
                 case 'model':
                     $r = new \ReflectionClass($this->owner->className());
-                    return lcfirst($r->getShortName());
+                    return BaseInflector::camel2id($r->getShortName());
                 case 'attribute':
                     return lcfirst($this->attribute);
                 case 'id':
